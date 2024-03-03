@@ -10,9 +10,11 @@ public class EntiteAdmin {
     private String ref;
 
 
-    private String libelle;
+    private String departement;
     @ManyToOne
-    private Employe chef;
+    private Employe chefDepart;
+    private String titrePoste;
+
 
     public Long getId() {
         return id;
@@ -30,19 +32,27 @@ public class EntiteAdmin {
         this.ref = ref;
     }
 
-    public String getLibelle() {
-        return libelle;
+    public String getTitrePoste() {
+        return titrePoste;
     }
 
-    public void setLibelle(String libelle) {
-        this.libelle = libelle;
+    public void setTitrePoste(String titrePoste) {
+        this.titrePoste = titrePoste;
     }
 
-    public Employe getChef() {
-        return chef;
+    public Employe getChefDepart() {
+        return chefDepart;
     }
 
-    public void setChef(Employe chef) {
-        this.chef = chef;
+    public void setChefDepart(Employe chefDepart) {
+        this.chefDepart = chefDepart;
+    }
+
+    public String getDepartement() {
+        return departement;
+    }
+
+    public void setDepartement(String departement) {
+        this.departement = departement;
     }
 }
