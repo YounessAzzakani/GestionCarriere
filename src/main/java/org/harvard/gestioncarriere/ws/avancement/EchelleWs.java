@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/gestion/echelle")
+@RestController("/api/gestion/echelle")
+@RequestMapping()
 
 public class EchelleWs {
     @Autowired

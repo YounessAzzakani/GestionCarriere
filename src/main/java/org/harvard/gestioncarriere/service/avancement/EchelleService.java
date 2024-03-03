@@ -4,6 +4,7 @@ import org.harvard.gestioncarriere.bean.avancement.Echelle;
 import org.harvard.gestioncarriere.dao.avancement.EchelleDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class EchelleService {
     public Echelle findByRef(String ref) {
         return echelleDao.findByRef(ref);
     }
-
+@Transactional
     public int deleteByRef(String ref) {
         return echelleDao.deleteByRef(ref);
     }

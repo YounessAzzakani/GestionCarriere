@@ -1,6 +1,7 @@
 package org.harvard.gestioncarriere.bean.avancement;
 
 import jakarta.persistence.*;
+import org.harvard.gestioncarriere.bean.mandat.Responsabilite;
 
 @Entity
 public class Echelon {
@@ -8,17 +9,23 @@ public class Echelon {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String ref;
-
-
     @ManyToOne
     private Echelle echelle;
     private String libelle;
 
 
-    //private int salaire;
+    private int salaire;
 
     public Long getId() {
         return id;
+    }
+
+    public int getSalaire() {
+        return salaire;
+    }
+
+    public void setSalaire(int salaire) {
+        this.salaire = salaire;
     }
 
     public void setId(Long id) {
