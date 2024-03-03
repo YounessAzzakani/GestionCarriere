@@ -1,4 +1,4 @@
-package org.harvard.gestioncarriere.dao;
+package org.harvard.gestioncarriere.dao.commun;
 
 import org.harvard.gestioncarriere.bean.commun.EntiteAdmin;
 import org.springframework.data.jpa.repository.JpaRepository;
