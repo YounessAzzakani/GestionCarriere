@@ -53,7 +53,7 @@ public class EntiteAdminServiceImpl implements EntiteAdminService {
 
     @Override
     public int save(EntiteAdmin entiteAdmin) {
-        if (findByRef(EntiteAdmin.getRef()) != null) {
+        if (findByRef(entiteAdmin.getRef()) != null) {
             return -1;
         } else {
             entiteAdminDao.save(entiteAdmin);

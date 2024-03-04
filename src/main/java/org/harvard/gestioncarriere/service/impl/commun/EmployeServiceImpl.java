@@ -46,7 +46,7 @@ public class EmployeServiceImpl implements EmployeService {
 
     @Override
     public int save(Employe employe) {
-        if (findByRef(Employe.getRef()) != null) {
+        if (findByRef(employe.getRef()) != null) {
             return -1;
         } else {
             employeDao.save(employe);
