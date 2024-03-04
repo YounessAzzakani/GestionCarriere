@@ -56,7 +56,7 @@ public class EntiteAdminServiceImpl implements EntiteAdminService {
         if (findByRef(EntiteAdmin.getRef()) != null) {
             return -1;
         } else {
-            entiteAdminDao.save(EntiteAdmin);
+            entiteAdminDao.save(entiteAdmin);
             return 1;
         }
     }
