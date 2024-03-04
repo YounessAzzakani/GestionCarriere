@@ -6,10 +6,11 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface EchelonDao extends JpaRepository<Echelon,Long> {
+public interface EchelonDao extends JpaRepository<Echelon, Long> {
 
     Echelon findByRef(String ref);
+
     int deleteByRef(String ref);
-    int update(Echelon echelon);
+
 
 }

@@ -7,10 +7,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface EchelleDao extends JpaRepository<Echelle,Long> {
+public interface EchelleDao extends JpaRepository<Echelle, Long> {
 
     Echelle findByRef(String ref);
+
     int deleteByRef(String ref);
-    int update(Echelle echelle);
 
 }
