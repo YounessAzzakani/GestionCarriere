@@ -8,17 +8,23 @@ public class Echelon {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String ref;
-
-
     @ManyToOne
     private Echelle echelle;
     private String libelle;
 
 
-    //private int salaire;
+    private int salaire;
 
     public Long getId() {
         return id;
+    }
+
+    public int getSalaire() {
+        return salaire;
+    }
+
+    public void setSalaire(int salaire) {
+        this.salaire = salaire;
     }
 
     public void setId(Long id) {
