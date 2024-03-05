@@ -1,4 +1,4 @@
-package org.harvard.gestioncarriere.ws.facade.commun;
+package org.harvard.gestioncarriere.ws.commun;
 
 import org.harvard.gestioncarriere.bean.commun.EntiteAdmin;
 import org.harvard.gestioncarriere.service.impl.commun.EntiteAdminServiceImpl;
@@ -37,7 +37,7 @@ public class EntiteAdminWs {
         return entiteAdminService.findByTitrePoste(titrePoste);
     }
 
-    @GetMapping("/titreposte/{titreposte}")
+    @DeleteMapping("/titreposte/{titreposte}")
     public int deleteByTitrePoste(@PathVariable String titrePoste) {
         return entiteAdminService.deleteByTitrePoste(titrePoste);
     }
@@ -49,6 +49,7 @@ public class EntiteAdminWs {
 
     @PutMapping("/")
     public int save(@RequestBody EntiteAdmin entiteAdmin) {
+
         return entiteAdminService.save(entiteAdmin);
     }
 

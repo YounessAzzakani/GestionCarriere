@@ -17,11 +17,13 @@ public class EntiteAdminServiceImpl implements EntiteAdminService {
 
     @Override
     public EntiteAdmin findByRef(String ref) {
+
         return entiteAdminDao.findByRef(ref);
     }
 
     @Override
     public int deleteByRef(String ref) {
+
         return entiteAdminDao.deleteByRef(ref);
     }
 
@@ -32,21 +34,25 @@ public class EntiteAdminServiceImpl implements EntiteAdminService {
 
     @Override
     public int deleteByDepartement(String departement) {
+
         return entiteAdminDao.deleteByDepartement(departement);
     }
 
     @Override
     public List<EntiteAdmin> findByTitrePoste(String titrePoste) {
+
         return entiteAdminDao.findByTitrePoste(titrePoste);
     }
 
     @Override
     public int deleteByTitrePoste(String titrePoste) {
+
         return entiteAdminDao.deleteByTitrePoste(titrePoste);
     }
 
     @Override
     public List<EntiteAdmin> findAll() {
+
         return entiteAdminDao.findAll();
     }
 

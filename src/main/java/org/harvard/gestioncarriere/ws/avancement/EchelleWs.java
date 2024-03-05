@@ -17,6 +17,7 @@ public class EchelleWs {
     @GetMapping("/ref/{ref}")
 
     public Echelle findByRef(@PathVariable String ref) {
+
         return echelleService.findByRef(ref);
     }
 
@@ -39,6 +40,7 @@ public class EchelleWs {
 
     @PostMapping("/")
     public int save(@RequestBody Echelle echelle) {
+
         return echelleService.save(echelle);
     }
 }

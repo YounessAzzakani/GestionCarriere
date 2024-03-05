@@ -1,5 +1,6 @@
 package org.harvard.gestioncarriere.service.facade.avancement;
 
+import org.harvard.gestioncarriere.bean.avancement.Echelle;
 import org.harvard.gestioncarriere.bean.avancement.Echelon;
 
 import java.util.List;
@@ -14,5 +15,6 @@ public interface EchelonService {
     List<Echelon> findAll();
 
     int save(Echelon echelon);
+    List<Echelon> findByEchelle(Echelle echelle);
 
 }

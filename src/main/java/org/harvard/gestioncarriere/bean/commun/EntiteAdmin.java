@@ -8,8 +8,6 @@ public class EntiteAdmin {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String ref;
-
-
     private String departement;
     @ManyToOne
     private Employe chefDepart;
