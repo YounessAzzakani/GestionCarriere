@@ -19,27 +19,26 @@ public class EmployeServiceImpl implements EmployeService {
 
     @Override
     public Employe findByRef(String ref) {
+
         return employeDao.findByRef(ref);
     }
 
     @Override
     @Transactional
     public int deleteByRef(String ref) {
+
         return employeDao.deleteByRef(ref);
     }
 
     @Override
-    public Employe findByDiplomeAndEntiteAdmin(String ref, String titrePoste) {
-        return employeDao.findByDiplomeAndEntiteAdmin(ref, titrePoste);
+    public Employe findByDiplome_RefAndEntiteAdmin_TitrePoste(String ref, String titrePoste) {
+        return employeDao.findByDiplome_RefAndEntiteAdmin_TitrePoste(ref, titrePoste);
     }
 
-    @Override
-    public Employe findByResponsabiliteAndEntiteAdmin(String nom, String titrePoste) {
-        return employeDao.findByResponsabiliteAndEntiteAdmin(nom, titrePoste);
-    }
 
     @Override
     public List<Employe> findAll() {
+
         return employeDao.findAll();
     }
 

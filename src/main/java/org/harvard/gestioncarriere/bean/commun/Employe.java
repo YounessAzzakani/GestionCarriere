@@ -1,7 +1,6 @@
 package org.harvard.gestioncarriere.bean.commun;
 
 import jakarta.persistence.*;
-import org.harvard.gestioncarriere.bean.mandat.Responsabilite;
 
 @Entity
 public class Employe {

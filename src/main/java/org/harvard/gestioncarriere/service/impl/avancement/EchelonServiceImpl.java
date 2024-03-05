@@ -2,6 +2,7 @@ package org.harvard.gestioncarriere.service.impl.avancement;
 
 import org.harvard.gestioncarriere.bean.avancement.Echelle;
 import org.harvard.gestioncarriere.bean.avancement.Echelon;
+import org.harvard.gestioncarriere.dao.avancement.EchelleDao;
 import org.harvard.gestioncarriere.dao.avancement.EchelonDao;
 import org.harvard.gestioncarriere.service.facade.avancement.EchelonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,19 +32,24 @@ public class EchelonServiceImpl implements EchelonService {
             exitingEchelon.setRef(echelon.getRef());
             exitingEchelon.setLibelle(echelon.getLibelle());
             exitingEchelon.setEchelle(echelon.getEchelle());
+            echelonDao.save(exitingEchelon);
             return 1;
         }
     }
 
+    @Override
+    public List<Echelon> findByEchelle(Echelle echelle) {
+        return echelonDao.findByEchelle(echelle);
+    }
+
     public List<Echelon> findAll() {
+
         return echelonDao.findAll();
     }
 
+
     public int save(Echelon echelon) {
-        Echelle exitingEchelle = echelon.getEchelle();
-        if (echelon.getRef() == null) {
-            return -2;
-        } else if (exitingEchelle == null) {
+        if (findByRef(echelon.getRef())!= null) {
             return -1;
         } else {
             echelonDao.save(echelon);
@@ -53,4 +59,5 @@ public class EchelonServiceImpl implements EchelonService {
 
     @Autowired
     private EchelonDao echelonDao;
+
 }

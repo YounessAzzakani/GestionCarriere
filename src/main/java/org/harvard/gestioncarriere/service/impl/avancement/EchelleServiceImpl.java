@@ -30,7 +30,7 @@ public class EchelleServiceImpl implements EchelleService {
     }
 
     public int save(Echelle echelle) {
-        if (echelle.getRef() != null) {
+        if (findByRef(echelle.getRef())!= null) {
             return -1;
         } else {
             echelleDao.save(echelle);
@@ -47,6 +47,7 @@ public class EchelleServiceImpl implements EchelleService {
             existingEchelle.setId(echelle.getId());
             existingEchelle.setRef(echelle.getRef());
             existingEchelle.setNom(echelle.getNom());
+            echelleDao.save(existingEchelle);
             return 1;
         }
 

@@ -1,7 +1,6 @@
 package org.harvard.gestioncarriere.bean.mandat;
 
 import jakarta.persistence.*;
-import org.harvard.gestioncarriere.bean.avancement.Echelon;
 
 import java.time.LocalDateTime;
 

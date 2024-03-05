@@ -8,8 +8,7 @@ import java.util.List;
 public interface EmployeService {
     Employe findByRef(String ref);
     int deleteByRef(String ref);
-    Employe findByDiplomeAndEntiteAdmin(String ref, String titrePoste);
-    Employe findByResponsabiliteAndEntiteAdmin(String nom, String titrePoste);
+    Employe findByDiplome_RefAndEntiteAdmin_TitrePoste(String ref, String titrePoste);
     List<Employe> findAll();
     int save(Employe employe);
 

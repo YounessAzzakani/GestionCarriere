@@ -1,6 +1,8 @@
 package org.harvard.gestioncarriere.ws.avancement;
 
+import org.harvard.gestioncarriere.bean.avancement.Echelle;
 import org.harvard.gestioncarriere.bean.avancement.Echelon;
+import org.harvard.gestioncarriere.service.facade.avancement.EchelleService;
 import org.harvard.gestioncarriere.service.facade.avancement.EchelonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +29,10 @@ public class EchelonWs {
 
         return echelonService.updateEchelon(echelon);
     }
+@GetMapping("//")
+    public List<Echelon> findByEchelle(@RequestBody Echelle echelle) {
+        return echelonService.findByEchelle(echelle);
+    }
 
     @GetMapping("/")
     public List<Echelon> findAll() {
@@ -42,4 +48,5 @@ public class EchelonWs {
 
     @Autowired
     private EchelonService echelonService;
+
 }

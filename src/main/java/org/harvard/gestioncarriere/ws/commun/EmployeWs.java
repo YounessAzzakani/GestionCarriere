@@ -1,4 +1,4 @@
-package org.harvard.gestioncarriere.ws.facade.commun;
+package org.harvard.gestioncarriere.ws.commun;
 
 import org.harvard.gestioncarriere.bean.commun.Employe;
 import org.harvard.gestioncarriere.service.impl.commun.EmployeServiceImpl;
@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("gestion-carriere/employe")
+@RequestMapping("gestionCarriere/employe")
 public class EmployeWs {
     @Autowired
     private EmployeServiceImpl employeService;
     @GetMapping("/ref/{ref}")
     public Employe findByRef(@PathVariable String ref) {
+
         return employeService.findByRef(ref);
     }
 
@@ -22,24 +23,21 @@ public class EmployeWs {
         return employeService.deleteByRef(ref);
     }
 
-    @GetMapping("/diplome/{diplome}/entiteAdmin/{entiteAdmin}")
-    public Employe findByDiplomeAndEntiteAdmin(@PathVariable String ref, String titrePoste) {
-        return employeService.findByDiplomeAndEntiteAdmin(ref, titrePoste);
+    @GetMapping("/ref/{ref}/titrePoste/{titrePoste}")
+    public Employe findByDiplome_RefAndEntiteAdmin_TitrePoste(@PathVariable String ref, String titrePoste) {
+        return employeService.findByDiplome_RefAndEntiteAdmin_TitrePoste(ref, titrePoste);
     }
 
-    @GetMapping("/responsabilite/{responsabilite}/entiteAdmin/{entiteAdmin}")
-
-    public Employe findByResponsabiliteAndEntiteAdmin(@PathVariable String nom, @PathVariable String titrePoste) {
-        return employeService.findByResponsabiliteAndEntiteAdmin(nom, titrePoste);
-    }
 
     @GetMapping("/")
     public List<Employe> findAll() {
+
         return employeService.findAll();
     }
 
     @PostMapping("/")
     public int save(@RequestBody Employe employe) {
+
         return employeService.save(employe);
     }
 
