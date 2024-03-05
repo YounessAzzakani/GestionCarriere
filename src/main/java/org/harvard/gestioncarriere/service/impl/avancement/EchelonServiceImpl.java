@@ -1,4 +1,4 @@
-package org.harvard.gestioncarriere.service.impl;
+package org.harvard.gestioncarriere.service.impl.avancement;
 
 import org.harvard.gestioncarriere.bean.avancement.Echelle;
 import org.harvard.gestioncarriere.bean.avancement.Echelon;
