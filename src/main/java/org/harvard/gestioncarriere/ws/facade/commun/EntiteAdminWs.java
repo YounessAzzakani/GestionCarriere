@@ -1,7 +1,13 @@
 package org.harvard.gestioncarriere.ws.facade.commun;
 
+import org.harvard.gestioncarriere.bean.commun.Employe;
 import org.harvard.gestioncarriere.bean.commun.EntiteAdmin;
+import org.harvard.gestioncarriere.bean.commun.EntiteAdmin;
+import org.harvard.gestioncarriere.service.facade.commun.EntiteAdminService;
 import org.harvard.gestioncarriere.service.impl.commun.EntiteAdminServiceImpl;
+import org.harvard.gestioncarriere.ws.converter.commun.EntiteAdminConverter;
+import org.harvard.gestioncarriere.ws.dto.commun.EmployeDto;
+import org.harvard.gestioncarriere.ws.dto.commun.EntiteAdminDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,20 +17,28 @@ import java.util.List;
 @RequestMapping("gestion-carriere/entiteAdmin")
 public class EntiteAdminWs {
     @Autowired
-    private EntiteAdminServiceImpl entiteAdminService;
+    private EntiteAdminService entiteAdminService;
+    @Autowired
+    private EntiteAdminConverter entiteAdminConverter;
+
     @GetMapping("/ref/{ref}")
-    public EntiteAdmin findByRef(@PathVariable String ref) {
-        return entiteAdminService.findByRef(ref);
+    public EntiteAdminDto findByRef(@PathVariable String ref) {
+
+        EntiteAdmin entiteAdmin = entiteAdminService.findByRef(ref);
+        return entiteAdminConverter.toDto(entiteAdmin);
     }
 
     @DeleteMapping("/ref/{ref}")
     public int deleteByRef(@PathVariable String ref) {
+
         return entiteAdminService.deleteByRef(ref);
     }
 
     @GetMapping("/departement/{departement}")
-    public List<EntiteAdmin> findByDepartement(@PathVariable String departement) {
-        return entiteAdminService.findByDepartement(departement);
+    public List<EntiteAdminDto> findByDepartement(@PathVariable String departement) {
+        List<EntiteAdmin> beans = entiteAdminService.findByDepartement(departement);
+        List<EntiteAdminDto> dtos = entiteAdminConverter.toDto(beans);
+        return dtos;
     }
 
     @DeleteMapping("/departement/{departement}")
@@ -33,8 +47,10 @@ public class EntiteAdminWs {
     }
 
     @GetMapping("/titreposte/{titreposte}")
-    public List<EntiteAdmin> findByTitrePoste(@PathVariable String titrePoste) {
-        return entiteAdminService.findByTitrePoste(titrePoste);
+    public List<EntiteAdminDto> findByTitrePoste(@PathVariable String titrePoste) {
+        List<EntiteAdmin> beans = entiteAdminService.findByTitrePoste(titrePoste);
+        List<EntiteAdminDto> dtos = entiteAdminConverter.toDto(beans);
+        return dtos;
     }
 
     @DeleteMapping("/titreposte/{titreposte}")
@@ -43,14 +59,18 @@ public class EntiteAdminWs {
     }
 
     @GetMapping("/")
-    public List<EntiteAdmin> findAll() {
-        return entiteAdminService.findAll();
+    public List<EntiteAdminDto> findAll() {
+
+        List<EntiteAdmin> beans = entiteAdminService.findAll();
+        List<EntiteAdminDto> dtos = entiteAdminConverter.toDto(beans);
+        return dtos;
     }
 
     @PutMapping("/")
-    public int save(@RequestBody EntiteAdmin entiteAdmin) {
+    public int save(@RequestBody EntiteAdminDto dto) {
 
-        return entiteAdminService.save(entiteAdmin);
+        EntiteAdmin bean = entiteAdminConverter.toBean(dto);
+        return entiteAdminService.save(bean);
     }
 
 
