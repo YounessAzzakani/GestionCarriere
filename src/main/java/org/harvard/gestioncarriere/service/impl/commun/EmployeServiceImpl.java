@@ -32,7 +32,7 @@ public class EmployeServiceImpl implements EmployeService {
 
     @Override
     public Employe findByDiplome_RefAndEntiteAdmin_TitrePoste(String ref, String titrePoste) {
-        return employeDao.findByDiplome_RefAndEntiteAdmin_TitrePoste(ref, titrePoste);
+        return employeDao.findByDiplomeRefAndEntiteAdminTitrePoste(ref, titrePoste);
     }
 
 
