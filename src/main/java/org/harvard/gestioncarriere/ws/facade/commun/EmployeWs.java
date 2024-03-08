@@ -1,4 +1,4 @@
-package org.harvard.gestioncarriere.ws.commun;
+package org.harvard.gestioncarriere.ws.facade.commun;
 
 import org.harvard.gestioncarriere.bean.commun.Employe;
 import org.harvard.gestioncarriere.service.impl.commun.EmployeServiceImpl;
