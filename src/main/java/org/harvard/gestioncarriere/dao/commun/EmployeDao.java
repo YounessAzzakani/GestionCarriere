@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface EmployeDao extends JpaRepository <Employe,Long> {
         Employe findByRef (String ref);
         int deleteByRef(String ref);
-        Employe findByDiplome_RefAndEntiteAdmin_TitrePoste (String ref, String  titrePoste);
+        Employe findByDiplomeRefAndEntiteAdminTitrePoste(String ref, String  titrePoste);
 
 
 }

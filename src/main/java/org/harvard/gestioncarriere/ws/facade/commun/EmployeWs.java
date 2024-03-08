@@ -32,7 +32,7 @@ public class EmployeWs {
     }
 
     @GetMapping("/ref/{ref}/titrePoste/{titrePoste}")
-    public EmployeDto findByDiplome_RefAndEntiteAdmin_TitrePoste(@PathVariable String ref, String titrePoste) {
+    public EmployeDto findByDiplomeRefAndEntiteAdminTitrePoste(@PathVariable String ref, String titrePoste) {
         Employe employe = employeService.findByDiplome_RefAndEntiteAdmin_TitrePoste(ref, titrePoste);
         return employeConverter.toDto(employe);
     }
