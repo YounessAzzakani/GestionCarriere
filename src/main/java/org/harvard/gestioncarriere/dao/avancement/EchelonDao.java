@@ -14,7 +14,7 @@ public interface EchelonDao extends JpaRepository<Echelon, Long> {
     Echelon findByRef(String ref);
 
     int deleteByRef(String ref);
-    List<Echelon> findByEchelle(Echelle echelle);
+    List<Echelon> findByEchelleRef(String ref);
 
 
 }

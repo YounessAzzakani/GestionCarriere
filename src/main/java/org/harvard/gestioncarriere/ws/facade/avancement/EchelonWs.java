@@ -34,10 +34,10 @@ public class EchelonWs {
         return echelonService.updateEchelon(echelon);
     }
 
-    @GetMapping("//")
-    public List<EchelonDto> findByEchelle(@RequestBody Echelle echelle) {
+    @GetMapping("echelle/ref/{ref}")
+    public List<EchelonDto> findByEchelleRef(@PathVariable String ref) {
 
-        List<Echelon> echelons = echelonService.findByEchelle(echelle);
+        List<Echelon> echelons = echelonService.findByEchelleRef(ref);
         List<EchelonDto> dtos = echelonConverter.toDto(echelons);
         return dtos;
     }

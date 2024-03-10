@@ -15,6 +15,6 @@ public interface EchelonService {
     List<Echelon> findAll();
 
     int save(Echelon echelon);
-    List<Echelon> findByEchelle(Echelle echelle);
+    List<Echelon> findByEchelleRef(String ref);
 
 }

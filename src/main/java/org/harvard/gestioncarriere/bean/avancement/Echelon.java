@@ -11,19 +11,19 @@ public class Echelon {
     private Echelle echelle;
     private String libelle;
 
-    private int salaire;
+    private double salaire;
 
     public Long getId() {
 
         return id;
     }
 
-    public int getSalaire() {
+    public double getSalaire() {
 
         return salaire;
     }
 
-    public void setSalaire(int salaire) {
+    public void setSalaire(double salaire) {
 
         this.salaire = salaire;
     }

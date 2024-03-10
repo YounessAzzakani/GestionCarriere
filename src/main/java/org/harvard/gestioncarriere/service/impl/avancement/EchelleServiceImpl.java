@@ -16,6 +16,7 @@ public class EchelleServiceImpl implements EchelleService {
     private EchelleDao echelleDao;
 
     public Echelle findByRef(String ref) {
+
         return echelleDao.findByRef(ref);
     }
 
